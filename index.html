@@ -52,8 +52,8 @@
 		<button onclick="showPopup();">Launch Popup</button>
 
 		<h1>Logs</h1>
-		<div id="User"></div>
-		<div id="Chat"></div>
+		<div id="User">User</div>
+		<div id="Chat">Chat</div>
 	</main>
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
@@ -65,13 +65,8 @@
         Telegram.WebApp.expand();
 
 		// console log
-		Telegram.WebApp.webappuser.get().then(function(user) {
-			document.getElementById("User").innerHTML = user;
-		});
-
-		Telegram.WebApp.webappchat.get().then(function(chat) {
-			document.getElementById("Chat").innerHTML = chat;
-		});
+		document.getElementById("User").innerHTML = Telegram.WebApp.WebAppUser;
+		document.getElementById("Chat").innerHTML = Telegram.WebApp.WebAppChat;
 
         // Function to call showPopup API
         function showPopup() {
@@ -84,7 +79,6 @@
                 ]
             }, function(btn) {
                 if (btn === 'link') {
-					Telegram.WebApp.Hapticfeedback.impact('heavy');
                     Telegram.WebApp.openLink('http://192.168.1.107:4000/');
                 }
             });
