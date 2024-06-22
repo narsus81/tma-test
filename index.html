@@ -54,6 +54,10 @@
 		<h1>Logs</h1>
 		<div id="User">User</div>
 		<div id="Chat">Chat</div>
+
+		<h1>Server-Sent Events</h1>
+		<div id="sse-data"></div>
+
 	</main>
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
@@ -92,6 +96,14 @@
 			document.body.setAttribute('style', '--bg-color:' + Telegram.WebApp.backgroundColor);
         });
 
+    </script>
+
+    <script>
+        const eventSource = new EventSource('http://melendriu.homepc.it:8888/events');
+        eventSource.onmessage = function(event) {
+            const dataElement = document.getElementById('sse-data');
+            dataElement.innerHTML += event.data + '<br>';
+        };
     </script>
 
 </body>
