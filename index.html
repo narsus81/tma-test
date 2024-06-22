@@ -103,25 +103,25 @@
 
         // Show main button
         Telegram.WebApp.MainButton.setParams({
-            text: 'Main Button'
+            text: 'Andrew Main'
         });
         Telegram.WebApp.MainButton.onClick(function () {
-            Telegram.WebApp.showAlert('Main Button was clicked')
+            Telegram.WebApp.showAlert('Andrew Main was clicked')
         });	
         Telegram.WebApp.MainButton.show();
 
         // Function to call showPopup API
         function showPopup() {
             Telegram.WebApp.showPopup({
-                title: 'Title',
-                message: 'Some message',
+                title: 'TeslaMate',
+                message: 'You can open the link:',
                 buttons: [
-                    {id: 'link', type: 'default', text: 'Open ton.org'},
+                    {id: 'link', type: 'default', text: 'Open TeslaMate'},
                     {type: 'cancel'},
                 ]
             }, function(btn) {
                 if (btn === 'link') {
-                    Telegram.WebApp.openLink('https://ton.org/');
+                    Telegram.WebApp.openLink('http://192.168.1.107:4000/');
                 }
             });
         };

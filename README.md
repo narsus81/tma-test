@@ -3,6 +3,8 @@
 
 ![logo of telegram web apps](./assets/tapps.png)
 
+## Description
+
 This is a basic and straightforward Telegram Mini App(TMA) implemented using plain JavaScript, HTML, and CSS. This project aims to provide a minimalistic example of how to create a simple TWA and launch it within Telegram without relying on complex build tools or bleeding-edge libraries.
 
 - App is available via direct link: <https://t.me/simple_telegram_mini_app_bot/app>
