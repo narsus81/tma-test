@@ -107,6 +107,9 @@
             const dataElement = document.getElementById('sse-data');
             dataElement.innerHTML = event.data + '<br>';
         };
+		eventSource.onerror = function(event) {
+            dataElement.innerHTML = 'Finished.. <br>';
+        };
     </script>
 
 </body>
