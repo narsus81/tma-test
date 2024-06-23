@@ -101,7 +101,7 @@
     </script>
 
     <script>
-        const eventSource = new EventSource('http://melendriu.homepc.it:8888/events');
+        const eventSource = new EventSource('https://melendriu.homepc.it:8888/events');
         eventSource.onmessage = function(event) {
 			const dataElement = document.getElementById('sse-data');
 			dataElement.innerHTML = event.data + '<br>';
