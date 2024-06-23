@@ -5,7 +5,6 @@
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
 
     <title>My TMA</title>
     <style>
@@ -105,13 +104,11 @@
         const eventSource = new EventSource('http://melendriu.homepc.it:8888/events');
         eventSource.onmessage = function(event) {
 			const dataElement = document.getElementById('sse-data');
-			if (event.data == "close") {
-				dataElement.innerHTML = 'Finished..<br>';
-                eventSource.close();
-            } else {
-				dataElement.innerHTML = event.data + '<br>';
-			}
+			dataElement.innerHTML = event.data + '<br>';
         };
+		eventSource.onerror = function(event) {
+			eventSource.close();
+		};
     </script>
 
 </body>
