@@ -73,7 +73,7 @@
         Telegram.WebApp.expand();
 
 		// console log
-		document.getElementById("User").innerHTML = Telegram.WebApp.initDataUnsafe.user.first_name + '\n' + Telegram.WebApp.initDataUnsafe.user.username + '\n';
+		document.getElementById("User").innerHTML = Telegram.WebApp.initDataUnsafe.user.first_name + '</br>' + Telegram.WebApp.initDataUnsafe.user.username + '</br>';
 		document.getElementById("Chat").innerHTML = JSON.stringify(Telegram.WebApp.initDataUnsafe.chat);
 
         // Function to call showPopup API
