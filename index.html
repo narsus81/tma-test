@@ -102,12 +102,15 @@
 
     <script>
         const eventSource = new EventSource('https://melendriu.homepc.it:8888/events');
-        eventSource.onmessage = function(event) {
-			const dataElement = document.getElementById('sse-data');
+		const dataElement = document.getElementById('sse-data');
+
+        eventSource.onmessage = function(event) {			
 			dataElement.innerHTML = event.data + '<br>';
         };
+		
 		eventSource.onerror = function(event) {
 			eventSource.close();
+			dataElement.innerHTML = 'Finished..<br>';
 		};
     </script>
 
