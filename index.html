@@ -60,11 +60,13 @@
 		<div id="Chat">Chat</div>
 
 		<h1>Server-Sent Events</h1>
-		<div id="sse-data"></div>
+		<div hx-ext="sse" sse-connect={ "https://melendriu.homepc.it:8888/events" } sse-swap="data"></div>
 
 	</main>
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+	<script src="https://unpkg.com/htmx.org@1.9.6"></script>
+	<script src="https://unpkg.com/htmx.org/dist/ext/sse.js"></script>
     <script>
         // Init TWA
         Telegram.WebApp.ready();
@@ -103,17 +105,17 @@
     </script>
 
     <script>
-        const eventSource = new EventSource('https://melendriu.homepc.it:8888/events');
-		const dataElement = document.getElementById('sse-data');
-
-        eventSource.onmessage = function(event) {			
-			dataElement.innerHTML = event.data + '<br>';
-        };
-
-		eventSource.onerror = function(event) {
-			eventSource.close();
-			dataElement.innerHTML = 'Finished..<br>';
-		};
+    //	const eventSource = new EventSource('https://melendriu.homepc.it:8888/events');
+	//	const dataElement = document.getElementById('sse-data');
+	//
+	//	eventSource.onmessage = function(event) {			
+	//		dataElement.innerHTML = event.data + '<br>';
+	//	};
+	//
+	//	eventSource.onerror = function(event) {
+	//		eventSource.close();
+	//		dataElement.innerHTML = 'Finished..<br>';
+	//	};
     </script>
 
 </body>
