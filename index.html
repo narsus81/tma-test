@@ -52,15 +52,16 @@
 	<main>
 		This is the MAIN
 		<h1>Modals</h1>
-		<button onclick="Telegram.WebApp.showAlert('Hello World!');">Launch Alert</button>
+		<button onclick="Telegram.WebApp.showAlert('Hello World!');Telegram.WebApp.HapticFeedback.notificationOccurred('success');">Launch Alert</button>
 		<button onclick="showPopup();">Launch Popup</button>
+		<div onclick="Telegram.WebApp.HapticFeedback.notificationOccurred('success');">Click Me!</div>
 
 		<h1>Logs</h1>
 		<div id="User">User</div>
 		<div id="Chat">Chat</div>
 
 		<h1>Server-Sent Events</h1>
-		<div hx-ext="sse" sse-connect="https://melendriu.homepc.it:8888/events" sse-swap="message"></div>
+		<div hx-ext="sse" sse-connect="https://melendriu.homepc.it:8888/events" sse-swap="custom"></div>
 
 	</main>
 
@@ -103,20 +104,6 @@
         });
 
     </script>
-
-    <!--<script>
-    	const eventSource = new EventSource('https://melendriu.homepc.it:8888/events');
-		const dataElement = document.getElementById('sse-data');
-	
-		eventSource.onmessage = function(event) {			
-			dataElement.innerHTML = event.data + '<br>';
-		};
-	
-		eventSource.onerror = function(event) {
-			eventSource.close();
-			dataElement.innerHTML = 'Finished..<br>';
-		};
-    </script>-->
 
 </body>
 </html>
