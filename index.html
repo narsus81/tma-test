@@ -52,11 +52,13 @@
 	<main>
 		This is the MAIN
 		<h1>Modals</h1>
-		<button onclick="Telegram.WebApp.showAlert('Hello World!');Telegram.WebApp.HapticFeedback.notificationOccurred('success');">Launch Alert</button>
-		<button onclick="showPopup();">Launch Popup</button>
+		<button onclick="Telegram.WebApp.showAlert('Hello World!');Telegram.WebApp.HapticFeedback.notificationOccurred('success');">Launch Alert</button></main><br>
+		<button onclick="showPopup();">Launch Popup</button></body><br>
 		<div onclick="Telegram.WebApp.HapticFeedback.notificationOccurred('success');">Click Me!</div>
 
 		<h1>Logs</h1>
+
+		<div id="InitData">InitData</div>
 		<div id="User">User</div>
 		<div id="Chat">Chat</div>
 
@@ -76,6 +78,7 @@
         Telegram.WebApp.expand();
 
 		// console log
+		document.getElementById("InitData").innerHTML = Telegram.WebApp.initData;
 		document.getElementById("User").innerHTML = Telegram.WebApp.initDataUnsafe.user.first_name + '</br>' + Telegram.WebApp.initDataUnsafe.user.username + '</br>';
 		document.getElementById("Chat").innerHTML = JSON.stringify(Telegram.WebApp.initDataUnsafe.chat);
 
