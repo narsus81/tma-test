@@ -52,15 +52,21 @@
 	<main>
 		This is the MAIN
 		<h1>Modals</h1>
-		<button onclick="Telegram.WebApp.showAlert('Hello World!');Telegram.WebApp.HapticFeedback.notificationOccurred('success');">Launch Alert</button></br>
+		<button onclick="Telegram.WebApp.showAlert('Hello World!');">Launch Alert</button></br>
 		<button onclick="showPopup();">Launch Popup</button></br>
-		<div onclick="Telegram.WebApp.HapticFeedback.notificationOccurred('success');">Click Me!</div>
+		<div onclick="Telegram.WebApp.HapticFeedback.notificationOccurred('success');">Success!</div></br>
+		<div onclick="Telegram.WebApp.HapticFeedback.notificationOccurred('warning');">Warning!</div></br>
+		<div onclick="Telegram.WebApp.HapticFeedback.notificationOccurred('error');">Error!</div></br>
+		<div onclick="Telegram.WebApp.HapticFeedback.notificationOccurred('light');">Light!</div></br>
+		<div onclick="Telegram.WebApp.HapticFeedback.notificationOccurred('medium');">Medium!</div></br>
+		<div onclick="Telegram.WebApp.HapticFeedback.notificationOccurred('heavy');">Heavy!</div></br>
+		<div onclick="Telegram.WebApp.HapticFeedback.notificationOccurred('rigid');">Rigid!</div></br>
+		<div onclick="Telegram.WebApp.HapticFeedback.notificationOccurred('soft');">Soft!</div></br>
 
 		<h1>Logs</h1>
 
 		<div id="InitData">InitData</div>
 		<div id="User">User</div>
-		<div id="Chat">Chat</div>
 
 		<h1>Server-Sent Events</h1>
 		<div hx-ext="sse" sse-connect="https://melendriu.homepc.it:8888/events" sse-swap="custom"></div>
@@ -94,9 +100,7 @@
             }, function(btn) {
                 if (btn === 'link') {
                     Telegram.WebApp.openLink('http://192.168.1.107:4000/');
-                } else {
-					Telegram.WebApp.HapticFeedback.notificationOccurred('success');
-				}
+                }
             });
         };
 
